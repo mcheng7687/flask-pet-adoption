@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block contents%}
+<h1>Pet Info</h1>
+
+<form action="/{{ pet.id }}" method="POST">
+
+    {% if pet.photo_url %}
+    <img src="{{pet.photo_url}}">
+    {% else %}
+    <p>NO PHOTO</p>
+    {% endif %}
+
+    <p>Name: {{pet.name}}</p>
+    <p>Species: {{pet.species}}</p>
+    <p>Age: {{pet.age}}</p>
+
+    {% include "form.html" %}
+
+    <button type="submit">Update</button>
+</form>
+<br>
+<form action="/{{ pet.id }}/delete" method="POST">
+    <button type="submit">Delete</button>
+</form>
+
+{% endblock %}

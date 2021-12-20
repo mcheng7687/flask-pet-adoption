@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block contents%}
+<h1>Add New Pet</h1>
+
+<form action="/add" method="POST">
+
+    {% include "form.html" %}
+
+    <button type="submit">Submit</button>
+</form>
+
+{% endblock %}
